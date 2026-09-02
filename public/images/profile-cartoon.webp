@@ -1,0 +1,16 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="600" fill="#fff9e6"/>
+  <circle cx="300" cy="200" r="80" fill="#ffcc00" stroke="#333" stroke-width="3"/>
+  <circle cx="270" cy="180" r="12" fill="#333"/>
+  <circle cx="330" cy="180" r="12" fill="#333"/>
+  <path d="M 300 220 Q 280 240 260 235" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 300 220 Q 320 240 340 235" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 300 250 L 300 280" stroke="#333" stroke-width="2"/>
+  <path d="M 250 280 L 350 280 Q 350 350 300 380 Q 250 350 250 280" fill="#ffcc00" stroke="#333" stroke-width="3"/>
+  <text x="300" y="460" text-anchor="middle" font-size="24" fill="#999">
+    Cartoon Style
+  </text>
+  <text x="300" y="490" text-anchor="middle" font-size="14" fill="#aaa">
+    Rick & Morty inspired
+  </text>
+</svg>
