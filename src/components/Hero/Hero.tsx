@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useMemo } from 'react';
 import { initializeHeroAnimation, cleanupHeroAnimation } from './heroAnimation';
-import { generateStripClipPath } from './PaperTear';
+import { generateStrips } from './PaperTear';
 import './Hero.css';
 
 const STRIP_COUNT = 7;
@@ -14,15 +14,14 @@ export const Hero: React.FC = () => {
   const hasScrolledRef = useRef(false);
 
   // Computed once — stable across re-renders, so tear edges never flicker.
-  const strips = useMemo(
-    () =>
-      Array.from({ length: STRIP_COUNT }, (_, i) => ({
-        clipPath: generateStripClipPath(i, STRIP_COUNT),
-        stagger: i / STRIP_COUNT,
-        rotate: (i % 2 === 0 ? -1 : 1) * (4 + ((i * 7) % 5)),
-      })),
-    []
-  );
+const strips = useMemo(() => {
+  const clipPaths = generateStrips(STRIP_COUNT);
+  return clipPaths.map((clipPath, i) => ({
+    clipPath,
+    stagger: i / STRIP_COUNT,
+    rotate: (i % 2 === 0 ? -1 : 1) * (4 + ((i * 7) % 5)),
+  }));
+}, []);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
